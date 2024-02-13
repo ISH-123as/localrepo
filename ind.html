@@ -3,27 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Webpage</title>
+    <title>My Blog</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
+            background-color: #f9f9f9;
         }
         header {
             background-color: #333;
             color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #444;
             padding: 10px 0;
             text-align: center;
         }
-        h1 {
-            margin: 0;
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0 15px;
         }
         .container {
             max-width: 800px;
             margin: 20px auto;
             padding: 0 20px;
+        }
+        article {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+        h1 {
+            margin-top: 0;
         }
         p {
             line-height: 1.6;
@@ -31,15 +47,25 @@
     </style>
 </head>
 <body>
-    <article>
-        <h2>Post Title</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget arcu a risus feugiat bibendum. Integer fringilla feugiat felis, sit amet venenatis libero laoreet ut.</p>
-        <a href="#">Read More</a>
-    </article>
-    <article>
-        <h2>Another Post Title</h2>
-        <p>Quisque consequat felis ut justo ullamcorper, ut scelerisque est faucibus. Mauris fringilla libero sit amet nisl lacinia ultrices. Donec euismod massa vitae mi gravida, id rhoncus lacus aliquam.</p>
-        <a href="#">Read More</a>
-    </article>
+    <header>
+        <h1>My Blog</h1>
+    </header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+    <div class="container">
+        <article>
+            <h2>Post Title</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget arcu a risus feugiat bibendum. Integer fringilla feugiat felis, sit amet venenatis libero laoreet ut.</p>
+            <a href="#">Read More</a>
+        </article>
+        <article>
+            <h2>Another Post Title</h2>
+            <p>Quisque consequat felis ut justo ullamcorper, ut scelerisque est faucibus. Mauris fringilla libero sit amet nisl lacinia ultrices. Donec euismod massa vitae mi gravida, id rhoncus lacus aliquam.</p>
+            <a href="#">Read More</a>
+        </article>
+    </div>
 </body>
 </html>
