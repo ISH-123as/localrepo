@@ -1,0 +1,48 @@
+ecommerce_data = [
+    {
+      "id": 1,
+      "name": "Product 1",
+      "description": "explore more products",
+      "price": 20000
+    },
+    {
+      "id": 2,
+      "name": "Product 2",
+      "description": "explore more products",
+      "price": 30000
+    },
+    {
+      "id": 3,
+      "name": "Product 3",
+      "description": "explore more products",
+      "price": 10000
+    }
+  ];
+  
+  const category_cards = [
+    {
+      "id": 1,
+      "name": "Product 4",
+      "description": "explore more products",
+      "price": 10000
+    },
+    {
+      "id": 2,
+      "name": "Product 5",
+      "description": "explore more products",
+      "price": 10000
+    },
+    {
+      "id": 3,
+      "name": "Product 6",
+      "description": "explore more products",
+      "price": 10000
+    },
+    {
+      "id": 4,
+      "name": "Product 7",
+      "description": "explore more products",
+      "price": 10000
+    }
+  ];
+  

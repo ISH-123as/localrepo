@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Furniture Store</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="./output.css" rel="stylesheet">
+</head>
+<body>
+    <header class="text-white-600 body-font bg-stone-600">
+        <div class="container mx-auto flex flex-wrap p-1 flex-col md:flex-row items-center bg-stone-600">
+          <a class="flex title-font font-bold text-4xl items-center text-gray-200 mb-4 md:mb-0 no-underline">
+           
+             
+            <span class="ml-3 mt-3"><h4>Furniture Store</h4></span>
+          </a>
+          <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+            <a class="mr-5 text-gray-200 hover:text-gray-900 no-underline">Home</a>
+            <a class="mr-5  text-gray-200 hover:text-gray-900 no-underline">Products</a>
+            <a class="mr-5  text-gray-200 hover:text-gray-900 no-underline">Contact</a>
+            
+            <div class="mb-3">
+                <div class="relative mb-4 flex w-full flex-wrap items-stretch mt-10">
+                <input
+                type="search"
+                id="searchInput"
+                placeholder="Search"
+                aria-describedby="button-addon1"
+                class="bg-white h-8 px-5 pr-5 rounded-full text-sm border-gray-300 focus:outline-none"
+                oninput="handleSearch()"/>
+            
+            </div>
+        </div>
+      
+
+    </header>
+    <section class="text-gray-600 body-font">
+        <div class="container mx-auto flex px-60 py-5 md:flex-row flex-col items-center">
+          <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+            <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Welcome to Our Store</h1>
+            
+            <div class="flex w-full md:justify-start justify-center">
+              
+              <button class="inline-flex text-white bg-stone-700 border-0 py-2 px-6 focus:outline-none hover:bg-stone-400 rounded text-lg justify-center">Shop Now</button>
+            </div>
+           
+            
+          </div>
+          <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+            <img class="object-cover object-center rounded mr-9" alt="hero" src="pexels-medhat-ayad-447592.jpg">
+          </div>
+        </div>
+      </section>
+    
+
+    <section class="py-8" id="products">
+        <div class="container mx-auto justify-center items-center flex flex-wrap">
+            <h2 class="text-3xl font-bold mb-6">Top Products</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center place-content-center" id="productContainer">
+                
+            </div>
+        </div>
+    </section>
+
+    <section class="py-8" id="catagory">
+        <div class="container mx-auto justify-center items-center flex flex-wrap">
+          <h2 class="text-3xl font-bold mb-6">Top Categories</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 justify-center items-center" id="categoryid">
+            
+            
+            
+              
+
+    
+    
+          </div>
+        </div>
+    </section>
+    <footer class="bg-gray-900 text-white p-4">
+        <div class="container mx-auto text-center">
+          <p>&copy; 2024 Website. All rights reserved.</p>
+        </div>
+      </footer>
+    
+
+    <script>
+        const productsData = [
+            {
+                "name": "Cabinet",
+                "image": "da-guojing-6888603_640.jpg",
+                "description": "Explore products in this category.",
+                "price": 10000
+            },
+            {
+                "name": "Sofa",
+                "image": "living-room-2569325_640.jpg",
+                "description": "Explore products in this category.",
+                "price": 2000
+            },
+            {
+                "name": "Bed",
+                "image": "bed-1839183_640.jpg",
+                "description": "Explore products in this category.",
+                "price": 100
+            }
+            
+        ];
+        
+        const  topCategories= [
+            {
+                "name": "Dining Table",
+                "image": "dining-room-332207_640.jpg",
+                "description": "Explore products in this category.",
+                "price": 1000
+                },
+            {
+                "name": "Cabinet",
+                "image": "closet-3532936_640.jpg",
+                "description": "Explore products in this category.",
+                "price": 2000
+            },
+            {
+                "name": "Sofa",
+                "image": "living-room-2569325_640.jpg",
+                "description": "Explore products in this category.",
+                "price": 3000
+            },
+            {
+                "name": "Bed",
+                "image": "bed-1839183_640.jpg",
+                "description": "Explore products in this category.",
+                "price": 4000
+            }
+        ];
+
+        function calculateDiscountedPrice(originalPrice, discountPercentage) {
+            const discountAmount = (originalPrice * discountPercentage) / 100;
+            const discountedPrice = originalPrice - discountAmount;
+            return discountedPrice;
+        }
+
+        
+        function createProductCard(product) {
+            const productContainer = document.getElementById("productContainer");
+
+            const card = document.createElement("div");
+            card.className = "bg-white p-6 rounded-lg shadow-md justify-center items-center";
+
+            const image = document.createElement("img");
+            image.src = product.image;
+            image.alt = product.name;
+            image.className = "mb-4 rounded-md flex flex-wrap";
+
+            const title = document.createElement("h3");
+            title.className = "text-xl font-bold mb-2";
+            title.textContent = product.name;
+
+            const description = document.createElement("p");
+            description.className = "text-gray-700";
+            description.textContent = product.description;
+
+            const originalPrice = document.createElement("p");
+            originalPrice.className = "text-gray-500 line-through";
+            originalPrice.textContent = `Original Price: ${product.price}`; 
+
+            const discountPrice = document.createElement("p");
+            discountPrice.className = "text-green-500 font-bold";
+            const discountedPriceValue = calculateDiscountedPrice(product.price, 10);
+            discountPrice.textContent = `Discount Price: ${discountedPriceValue.toFixed(2)}`;
+        
+
+            const exploreButton = document.createElement("a");
+            exploreButton.href = "#";
+            exploreButton.className = "mt-4 inline-block bg-stone-700 text-white px-2 py-1 rounded hover:bg-stone-500 no-underline";
+            exploreButton.textContent = "Explore";
+
+            card.appendChild(image);
+            card.appendChild(title);
+            card.appendChild(description);
+            card.appendChild(originalPrice);
+            card.appendChild(discountPrice);
+            card.appendChild(exploreButton);
+
+            productContainer.appendChild(card);
+        }
+
+        
+        productsData.forEach(product => createProductCard(product));
+
+        function createCategoryCard(product) {
+            const productContainer = document.getElementById("categoryid");
+
+            const card = document.createElement("div");
+            card.className = "bg-white p-6 rounded-lg shadow-md";
+
+            const image = document.createElement("img");
+            image.src = product.image;
+            image.alt = product.name;
+            image.className = "mb-4 rounded-md";
+
+            const title = document.createElement("h3");
+            title.className = "text-xl font-bold mb-2";
+            title.textContent = product.name;
+
+            const description = document.createElement("p");
+            description.className = "text-gray-700";
+            description.textContent = product.description;
+
+            const exploreButton = document.createElement("a");
+            exploreButton.href = "#";
+            exploreButton.className = "mt-4 inline-block bg-stone-700 text-white px-2 py-1 rounded hover:bg-stone-500 no-underline";
+            exploreButton.textContent = "Explore";
+
+            card.appendChild(image);
+            card.appendChild(title);
+            card.appendChild(description);
+            card.appendChild(exploreButton);
+
+            productContainer.appendChild(card);
+        }
+
+        
+        topCategories.forEach(product => createCategoryCard(product));
+
+        function renderProducts(products) {
+            const productContainer = document.getElementById("productContainer");
+            productContainer.innerHTML = "";
+
+            products.forEach(product => createProductCard(product));
+        }
+
+        
+        function handleSearch() {
+            const searchInput = document.getElementById("searchInput");
+            const searchTerm = searchInput.value.toLowerCase();
+
+            const filteredProducts = productsData.filter(product =>
+                product.name.toLowerCase().includes(searchTerm)
+            );
+
+            renderProducts(filteredProducts);
+        }
+
+        
+        function clearSearch() {
+            const searchInput = document.getElementById("searchInput");
+            searchInput.value = "";
+            renderProducts(productsData);
+        }
+
+    
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProducts(productsData);
+        });
+    </script>
+
+</body>
+</html>

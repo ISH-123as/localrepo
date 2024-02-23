@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Furniture Store</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="./output.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+</head>
+<body>
+    <header class="text-white-600 body-font bg-stone-600">
+        <div class="container mx-auto flex flex-wrap p-1 flex-col md:flex-row items-center bg-stone-600">
+          <a class="flex title-font font-bold text-4xl items-center text-gray-200 mb-4 md:mb-0 no-underline">
+           
+             
+            <span class="ml-3 mt-3"><h4>Furniture Store</h4></span>
+          </a>
+          <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+            <a class="mr-5 text-gray-200 hover:text-gray-900 no-underline">Home</a>
+            <a class="mr-5  text-gray-200 hover:text-gray-900 no-underline">Products</a>
+            <a class="mr-5  text-gray-200 hover:text-gray-900 no-underline">Contact</a>
+            
+            <div class="mb-3">
+                <div class="relative mb-4 flex w-full flex-wrap items-stretch mt-10">
+                <input
+                type="search"
+                id="searchInput"
+                placeholder="Search"
+                aria-describedby="button-addon1"
+                class="bg-white h-8 px-5 pr-5 rounded-full text-sm border-gray-300 focus:outline-none"
+                oninput="handleSearch()"/>
+            
+            </div>
+        </div>
+      
+
+    </header>
+    <!-- <section class="text-gray-600 body-font" id="bannerSection">
+        <div class="container mx-auto flex px-60 py-5 md:flex-row flex-col items-center">
+          <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-center md:text-center mb-16 md:mb-0 items-center text-center" >
+            <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Welcome to Our Store</h1>
+            
+            <div class="flex w-full md:justify-center justify-center">
+              
+              <button class="inline-flex text-white bg-stone-700 border-0 py-2 px-6 focus:outline-none hover:bg-stone-400 rounded text-lg justify-center">Shop Now</button>
+            </div>
+           
+            
+          </div>
+          <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 ">
+            <img class="object-cover object-center rounded mr-9" alt="hero" src="pexels-medhat-ayad-447592.jpg">
+          </div>
+        </div>
+      </section> -->
+
+    <div  class="flex flex-wrap -mx-4" id="productListingSection">
+      <div id="default-carousel" class="relative w-full mt-10" data-carousel="slide">
+ 
+        <div class="relative h-96 overflow-hidden rounded-lg md:h-96">
+            <!-- Item 1 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="https://hometown.gumlet.io/media/cms/icons/new-arrival2.jpg?w=1536&dpr=1.3" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            </div>
+            <!-- Item 2 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="chair-1840011_640.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 h-full object-contain" alt="...">
+            </div>
+            <!-- Item 3 -->
+             <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="https://ii1.pepperfry.com/assets/414025a7-9b78-4104-8ec7-42dc3f3f7753.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 h-full object-contain" alt="...">
+            </div>
+
+             <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="da-guojing-6888603_640.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 h-full object-contain" alt="...">
+            </div>
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="https://ii1.pepperfry.com/media/catalog/product/r/o/494x544/romona-fabric-3-seater-curve-sofa-in-ash-grey-colour-romona-fabric-3-seater-curve-sofa-in-ash-grey-c-rbiiyn.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 max-h-full object-contain" alt="...">
+            </div>
+
+          
+           
+        </div>
+        <!-- Slider indicators -->
+        <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
+        </div>
+        <!-- Slider controls -->
+        <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+               
+                <span class="sr-only">Previous</span>
+            </span>
+        </button>
+        <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                
+                <span class="sr-only">Next</span>
+            </span>
+        </button>
+    </div>
+    </div>
+    
+
+
+    <section class="py-8" id="products">
+        <div class="container mx-auto justify-center items-center flex flex-wrap">
+            <h2 class="text-2xl font-poppins font-semibold mb-6 mt-10 text-stone-600" id="headingSection">Top Products</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center place-content-center" id="productContainer">
+                
+            </div>
+        </div>
+    </section>
+    <section class="justify-center" id="notFoundMessage">
+
+      <div class="container mx-auto justify-center items-center flex flex-wrap">
+        <h2 class="text-2xl font-bold mb-6 justify-center  text-stone-600 ">Not Found</h2>
+ 
+      </div>
+
+    </section>  
+  
+
+
+    <section class="py-8" id="catagory">
+        <div class="container mx-auto justify-center items-center flex flex-wrap" id="Categories">
+          <h2 class="text-2xl font-semibold  mb-6 text-stone-600">Top Categories</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 justify-center items-center" id="categoryid">
+            
+            
+            
+              
+
+    
+    
+          </div>
+        </div>
+    </section>
+   
+
+  <footer class="bg-stone-400 dark:bg-gray-900 bottom-0">
+      <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+          <div class="md:flex md:justify-between">
+            <div class="mb-6 md:mb-0">
+                <!-- <a href="" class="flex items-center">
+                   
+                    <span class="ml-3 mt-3"><h4 >Furniture Store</h4></span>
+                </a> -->
+                <a class="flex title-font font-bold text-2xl items-center text-gray-100 mb-4 md:mb-0 no-underline">
+           
+             
+                   <span class="ml-3 mt-3"><h4>Furniture Store</h4></span>
+                </a>
+            </div>
+            <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+                <div>
+                    <h2 class="mb-6 text-sm font-semibold text-gray-100 uppercase dark:text-white">Resources</h2>
+                    <ul class="text-gray-100 dark:text-gray-400 font-medium">
+                        <li class="mb-4">
+                            <a href="" class="hover:underline">Flowbite</a>
+                        </li>
+                        <li>
+                            <a href="" class="hover:underline">Tailwind CSS</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="mb-6 text-sm font-semibold text-gray-100 uppercase dark:text-white">Follow us</h2>
+                    <ul class="text-gray-100 dark:text-gray-400 font-medium">
+                        <li class="mb-4">
+                            <a href="" class="hover:underline ">Github</a>
+                        </li>
+                        <li>
+                            <a href="" class="hover:underline">Discord</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="mb-6 text-sm font-semibold text-gray-100 uppercase dark:text-white">Legal</h2>
+                    <ul class="text-gray-100 dark:text-gray-400 font-medium">
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:underline">Terms &amp; Conditions</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        <div class="sm:flex sm:items-center sm:justify-between">
+            <span class="text-sm text-gray-100 sm:text-center dark:text-gray-400">© 2024 All Rights Reserved.
+            </span>
+            
+          </div>
+        </div>
+      </div>
+  </footer>
+
+
+    
+
+<script src="name.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+        
+       
+
+</body>
+</html>
